@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="robots" content="nofollow">
+		<meta name="googlebot" content="noindex">
+	    <title>Draw Line Arkademy - Bagus Pambudi</title>
+	    <meta name="theme-color" content="#5D4037">
+	    <meta name="Description" content="Soal nomor 3 Draw Line">
+        <meta name="Keyword" content="Draw Line| Arkademy | Soal nomor 3">
+        <link rel="stylesheet" type="text/css" href="https://maspamz.com/assets/arkademy/css/login.css">
+	</head>
+<body>
+    <section class="login-form-wrap">
+        <h1>Draw Line</h1>
+        <br>
+        <form class="login-form" action="#">
+            <label>
+                <input type="number" name="angka" id="angka" required placeholder="Masukkan jumlah line, ex: 11">
+                <input type="button" onclick="drawLine()" value="Cetak">
+            </label>
+            <pre class="keterangan" id="result" style="background-color:white;color: black;">Result Line :
+</pre>
+        </form>
+        <h5><a href="#">@2018 - Bagus Pambudi</a></h5>
+    </section>
+</body>
+<script type="text/javascript">
+function drawLine() {
+    var v1 = document.getElementById('angka').value;
+    var v2 = v1-1;
+    var i=0, t="", sp= "";
+    var print = document.getElementById('result');
+    print.innerHTML +="*\n";
+    console.log("*");
+    for(i;i<v2;i++){
+        t+="   ";
+        sp+="    ";
+        console.log(t + "*");
+        print.innerHTML += sp + "*\n";
+    }
+    
+    
+   
+}
+</script>
+</html>
