@@ -1,5 +1,6 @@
 # arkademy-test
 https://maspamz.com/arkademy/
+
 Jawaban soal arkademy test 05-01-2019
 1. Return value harus berupa JSON (PHP)
 2. Buatlah sebuah function untuk memverifikasi valid password dengan requirements (html, js)
