@@ -29,20 +29,17 @@
 <script type="text/javascript">
 function drawLine() {
     var v1 = document.getElementById('angka').value;
-    var v2 = v1-1;
-    var i=0, t="", sp= "";
+    var v2 = v1;
+    var i=0, t="";
     var print = document.getElementById('result');
-    print.innerHTML +="*\n";
-    console.log("*");
+    print.innerHTML ="";
+    
+    var sp="        *";
+    // print.innerHTML +=  sp.substr(1,8);
+    // console.log("*");
     for(i;i<v2;i++){
-        t+="   ";
-        sp+="    ";
-        console.log(t + "*");
-        print.innerHTML += sp + "*\n";
+        print.innerHTML +=  sp.substr(i)+"\n";
     }
-    
-    
-   
 }
 </script>
 </html>
