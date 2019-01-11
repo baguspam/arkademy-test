@@ -29,20 +29,15 @@
 			<tbody>
 			<?php
 				include ("config/config.php");
-				$query = "SELECT categories.id, categories.name FROM categories";
+				$query = "SELECT categories.id, categories.name AS name_c, GROUP_CONCAT(product.name) AS product_c, 
+                COUNT(product.name) AS total FROM categories, product WHERE product.category_id = categories.id GROUP BY categories.id ";
 				$sqlcon = $conn->query($query);
 				while($read=mysqli_fetch_array($sqlcon)){
 				echo '<tr>';
 				echo '<td>'.$read['0'].'</td>';
-				echo '<td>'.$read['1'].'</td>';
-
-				$query2 = "SELECT product.name FROM product WHERE category_id=".$read['0']." ORDER by name ASC";
-				$sqlcon2 = $conn->query($query2);
-				echo '<td>';
-				while($read2=mysqli_fetch_array($sqlcon2)){
-				echo $read2['0'].', ';
-				}
-				echo '</td>';
+				echo '<td>'.$read['name_c'].'</td>';
+				echo '<td>'.$read['product_c'].'</td>';
+				echo '<td>'.$read['total'].'</td>';
 				echo '</tr>';
 				}
 			?>
