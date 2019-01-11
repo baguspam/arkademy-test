@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `xgudang`;
-USE `xgudang`;
+CREATE DATABASE  IF NOT EXISTS `gudang`;
+USE `gudang`;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
@@ -29,5 +29,4 @@ INSERT INTO `product` (`id`, `name`, `category_id`) VALUES
 (5, 'Rock mie baso', 2),
 (6, 'Nuget', 3);
 
-
-SELECT categories.id, categories.name, product.name FROM categories, product WHERE product.category_id = categories.id;
+SELECT categories.id, categories.name AS name_c, GROUP_CONCAT(product.name) AS product_c, COUNT(product.name) AS total FROM categories, product WHERE product.category_id = categories.id GROUP BY categories.id;
